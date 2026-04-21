@@ -1,8 +1,11 @@
-# 2026_CSE391_66CNTT1_NguyenHaiYen
+# 2026_CSE391_66HTTT1_NguyenHaiYen
 
 **Môn học:** Nền tảng Phát triển Web (CSE391)
+
 **Sinh viên:** Nguyễn Hải Yến
+
 **Lớp:** 66HTTT1
+
 **Trường:** Đại học Thủy Lợi
 
 ---
