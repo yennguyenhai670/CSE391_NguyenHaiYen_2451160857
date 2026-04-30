@@ -235,7 +235,7 @@ Tuy nhiên, thẻ `<div>` vẫn cực kỳ phù hợp trong một trường hợ
 - Lỗi 9: Dòng 5 - Sai charset - sửa thành `<meta charset="UTF-8">`.
 - Lỗi 10: Chưa đóng thẻ `<html>` - Thêm `</html>` sau thẻ `</body>`
 
-### Câu B4:
+### Câu B4:  
 **Trang web đã chọn:** thegioididong.com
 
 ## 1. Phân tích thẻ Semantic HTML5
