@@ -1,0 +1,97 @@
+/* 1. Dòng đầu tiên CSS: Reset box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* 3. Header styling (Dùng ID selector) */
+#main-header {
+    background: linear-gradient(135deg, #007bff, #6610f2); /* Background gradient */
+    color: white; /* Text color trắng */
+    padding: 30px 20px; /* Padding > 20px */
+    text-align: center;
+}
+
+/* 4. Navigation links styling */
+nav {
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Descendant selector: Chọn thẻ a nằm trong nav */
+nav a {
+    text-decoration: none; /* Mặc định không gạch chân */
+    color: #007bff; /* Màu cụ thể */
+    font-weight: bold;
+    margin: 0 20px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Pseudo-class: Trạng thái hover */
+nav a:hover {
+    color: #dc3545; /* Đổi màu */
+    text-decoration: underline; /* Thêm gạch chân */
+}
+
+/* Class selector: Link đang active */
+nav a.active {
+    color: #28a745; 
+    border-bottom: 2px solid #28a745; /* Kiểu khác biệt */
+}
+
+/* 5. Table kỹ năng */
+main {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse; /* Border-collapse */
+    margin-top: 20px;
+    background-color: white;
+}
+
+.skills-table th, .skills-table td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Header row */
+.skills-table th {
+    background-color: #353333; /* Background đậm */
+    color: #ffffff; /* Text trắng */
+}
+
+/* Zebra striping (Dùng pseudo-class) */
+.skills-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover row (Dùng pseudo-class) */
+.skills-table tr:hover {
+    background-color: #e2e6ea;
+}
+
+/* 6. Footer styling */
+footer {
+    background-color: #212529; /* Background đậm */
+    color: #adb5bd; /* Text nhạt */
+    text-align: center; /* Text-align center */
+    padding: 20px;
+    margin-top: 40px;
+}
