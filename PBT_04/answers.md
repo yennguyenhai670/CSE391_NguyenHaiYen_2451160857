@@ -1,11 +1,6 @@
 # PHIẾU BÀI TẬP 04
----
-
 ## PHẦN A — KIỂM TRA ĐỌC HIỂU 
-
 ### Câu A1 — 5 Loại Positioning
-
-
 | Position | Vẫn chiếm chỗ trong flow? | Tham chiếu vị trí | Cuộn theo trang? | Use case |
 |----------|---------------------------|-------------------|------------------|----------|
 | `static` | có | Normal flow (luồng chuẩn của tài liệu) | có | Layout mặc định của hầu hết các phần tử |
@@ -72,73 +67,12 @@
 - Nguyên nhân: Khi bọc .card-container bằng Flexbox, theo mặc định align-items: stretch đã giúp các thẻ .card có chiều cao bằng nhau rồi. Tuy nhiên, nội dung bên trong (ảnh, text) dài ngắn khác nhau. Vì .card đang là block thông thường, các phần tử cứ thế xếp chồng lên nhau. Nội dung ít thì nút "Mua" nằm tít trên cao, nội dung nhiều thì nút bị đẩy xuống dưới, nhìn tổng thể hàng nút lởm chởm.
 - Sửa: Biến chính bản thân thẻ .card thành một Flexbox dọc. Sau đó, dùng trick margin-top: auto cho cái nút. Thuộc tính này sẽ hút hết toàn bộ khoảng trống thừa bên trên nó, ép cái nút dính chặt xuống mặt đáy của card.
 
-```css
-.card-container { display: flex; flex-wrap: wrap; }
-.card { width: 30%; margin: 1.5%; }
-.card img { width: 100%; }
-.card h3 { font-size: 18px; }
-.card .btn { padding: 10px; }
-
-/* Sửa code lỗi 1*/
-.card-container { display: flex; flex-wrap: wrap; }
-.card { 
-    width: 30%; 
-    margin: 1.5%; 
-    display: flex;             
-    flex-direction: column;    
-}
-.card img { width: 100%; }
-.card h3 { font-size: 18px; }
-.card .btn { 
-    padding: 10px; 
-    margin-top: auto;          
-}
-```
-
 **Lỗi 2:** Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
-
 - Nguyên nhân: Khai báo display: flex ở .hero mới chỉ đánh thức Flexbox, mặc định nó sẽ xếp phần tử từ góc trên cùng bên trái. Còn cái text-align: center ở .hero-content là vô dụng trong việc căn chỉnh layout của khối, nó chỉ có tác dụng căn giữa đoạn văn bản (chữ) ở bên trong khối đó thôi. Không có lệnh căn trục, khối .hero-content vẫn dính chặt ở top-left
 - Sửa:Để bộ đôi quyền lực của Flexbox vào thẳng thẻ cha .hero: justify-content để căn giữa trục ngang và align-items để căn giữa trục dọc
-
-```css
-.hero {
-    height: 100vh;
-    display: flex;
-}
-.hero-content {
-    text-align: center;
-}
-/*Sửa code lỗi 2*/
-.hero {
-        height: 100vh;
-        display: flex;
-        justify-content: center; /* Căn giữa theo chiều ngang */
-        align-items: center;     /* Căn giữa theo chiều dọc */
-    }
-    .hero-content {
-        text-align: center; 
-    }
-```
 
 **Lỗi 3:** Sidebar bị co lại khi content quá dài
 - Nguyên nhân:Flexbox có một thuộc tính ngầm định cực kỳ nhiệt tình là `flex-shrink: 1` áp dụng cho mọi flex-item. Ý nghĩa của nó là: "Nếu khung cha thiếu chỗ, hãy tự bóp nhỏ mình lại để nhường nhịn". Khi phần `.content` có quá nhiều text hoặc hình ảnh dài ngoẵng, nó sẽ ép cái `.sidebar` phải nhường chỗ. Kết quả là cái lệnh `width: 250px` kia bị Flexbox tước quyền lực, sidebar bị teo rúm lại
 - Sửa: Đặt `flex-shrink: 0` cho `.sidebar` để ra lệnh cho Flexbox: "Dù trời có sập, phần nội dung có dài vô tận thì vẫn phải giữ đúng chiều rộng 250px cho tôi, cấm co lại".
 
-
-```css
-.layout { display: flex; }
-.sidebar { width: 250px; }
-.content { flex: 1; }
-
-/*Sửa code lỗi 3*/
-.layout { display: flex; }
-.sidebar { 
-        width: 250px; 
-        flex-shrink: 0; 
-    }
-.content { 
-        flex: 1; 
-    }
-
-```
 
