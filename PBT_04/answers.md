@@ -1,8 +1,4 @@
 # PHIẾU BÀI TẬP 04
-# **CSS LAYOUT — Positioning, Flexbox & Grid**
-
-> **Tài liệu tham chiếu:** `tuan_2_css_core/12_css_positioning.md` + `tuan_3_css_advanced/13_creating_responsive_layouts.md`
->
 ---
 
 ## PHẦN A — KIỂM TRA ĐỌC HIỂU 
