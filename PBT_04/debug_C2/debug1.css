@@ -1,0 +1,27 @@
+* { 
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+.card-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+.card { 
+    width: 30%; 
+    margin: 1.5%; 
+    /*Biến card thành Flexbox cột */
+    display: flex; 
+    flex-direction: column; 
+}
+.card img { 
+    width: 100%; 
+}
+.card h3 { 
+    font-size: 18px; 
+}
+.card .btn { 
+    padding: 10px; 
+    /*Tự động đẩy nút Mua xuống sát đáy */
+    margin-top: auto; 
+}

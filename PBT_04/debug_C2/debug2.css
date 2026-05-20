@@ -1,0 +1,18 @@
+* { 
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    
+    justify-content: center; /* Căn giữa theo trục ngang */
+    align-items: center;     /* Căn giữa theo trục dọc */
+    background-color: #1b84ee; 
+  
+}
+
+.hero-content {
+    text-align: center;
+}

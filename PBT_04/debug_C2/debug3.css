@@ -1,0 +1,26 @@
+.layout { 
+    display: flex; 
+    
+    /* Thêm viền ngoài cùng cho dễ nhìn layout */
+    border: 2px solid #333; 
+    margin-top: 20px;
+}
+
+.sidebar { 
+    width: 250px; 
+    
+    /*sửa lỗi kh co lại */
+    flex-shrink: 0; 
+    
+    background-color: #117ae3;
+    color: white;
+    padding: 20px;
+}
+
+.content { 
+    /* tự động phình to ra chiếm hết không gian còn lại */
+    flex: 1; 
+    
+    background-color: #ecf0f1; 
+    padding: 20px;
+}
