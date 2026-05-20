@@ -1,7 +1,5 @@
-# 📋 PHIẾU BÀI TẬP 03
-# **CSS CORE — Selectors, Box Model, Inheritance & Cascade**
-## PHẦN A — KIỂM TRA ĐỌC HIỂU
-
+# PHIẾU BÀI TẬP 03
+## PHẦN A 
 ### Câu A1 — 3 Cách nhúng CSS
 ### 1. Inline CSS (Nhúng trực tiếp)
 Viết CSS thẳng vào thuộc tính `style` của thẻ HTML.
