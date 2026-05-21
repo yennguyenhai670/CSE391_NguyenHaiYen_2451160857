@@ -1,0 +1,127 @@
+/* BASE & MOBILE (< 768px) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px; 
+    line-height: 1.5;
+}
+
+/* Header & Nav (Hamburger) */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo { font-size: 20px; font-weight: bold; }
+.menu-checkbox { display: none; }
+.hamburger { font-size: 24px; cursor: pointer; }
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background-color: #444;
+    flex-direction: column;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 1px solid #555;
+}
+
+/* Khi check vào Hamburger thì hiện menu */
+.menu-checkbox:checked ~ .nav-menu { display: flex; }
+
+/* Main Layout - Mobile 1 cột */
+.main-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Ẩn Sidebar và Ads trên Mobile */
+.sidebar, .ads-bar { display: none; }
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-body { padding: 15px; text-align: center; }
+.price { color: red; font-weight: bold; margin: 10px 0; }
+.btn { padding: 10px 20px; background: #007bff; color: #fff; border: none; cursor: pointer; }
+
+.footer {
+    background: #333; color: white;
+    text-align: center; padding: 20px;
+    margin-top: 20px;
+}
+
+/*TABLET (768px - 1023px)*/
+@media (min-width: 768px) {
+    body { font-size: 16px; }
+
+    /* Chuyển Nav thành menu ngang */
+    .hamburger { display: none; }
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        background: transparent;
+    }
+    .nav-menu a { border-bottom: none; padding: 0 15px; }
+
+    /* Layout Tablet */
+    .sidebar { 
+        display: block; 
+        background: #f4f4f4; 
+        padding: 15px; 
+    }
+    .filter-options { display: flex; gap: 15px; } 
+    
+    .product-grid { grid-template-columns: repeat(2, 1fr); } 
+}
+
+/* DESKTOP (>= 1024px) */
+@media (min-width: 1024px) {
+    body { font-size: 18px; }
+
+    /* Layout Desktop */
+    .main-container {
+        grid-template-columns: 250px 1fr 200px; 
+        align-items: start;
+    }
+
+    .sidebar .filter-options { flex-direction: column; }
+    .ads-bar { display: block; background: #ffeaa7; padding: 20px; min-height: 300px; }
+    
+    .product-grid { grid-template-columns: repeat(4, 1fr); } 
+}

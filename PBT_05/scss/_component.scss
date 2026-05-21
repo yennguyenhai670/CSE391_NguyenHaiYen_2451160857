@@ -1,0 +1,72 @@
+.card {
+    background: #fff;
+    border: 1px solid #eae5f2;
+    border-radius: $spacing-sm;
+    overflow: hidden;
+    @include card-shadow; 
+
+    .card-image {
+        width: 100%;
+        display: block;
+    }
+
+    .card-body {
+        padding: $spacing-md;
+        text-align: center;
+    }
+
+    .price {
+        color: #d63384;
+        font-weight: bold;
+        margin: $spacing-sm 0;
+    }
+
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(111, 66, 193, 0.2);
+    }
+
+    
+    &.featured {
+        border: 2px solid $primary-color;
+    }
+}
+
+.btn {
+    background-color: $primary-color;
+    color: white;
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+.header {
+    background-color: $primary-color;
+    color: white;
+    padding: $spacing-md;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .nav-menu {
+        a {
+            color: white;
+            text-decoration: none;
+            padding: $spacing-sm;
+            
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.container {
+    text-align: center;
+}
+
+hr {
+    margin: 40px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/*YÊU CẦU 5: Fade-in khi scroll (Dùng CSS Only) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-scroll {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/*YÊU CẦU 1: Card hover effect */
+.product-card {
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    margin: 0 auto;
+    
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    transition: all 0.3s ease; 
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/*  YÊU CẦU 3: Image zoom*/
+.img-container {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden; 
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
+.product-card:hover .img-container img {
+    transform: scale(1.1);
+}
+
+/* YÊU CẦU 2: Button animation */
+.btn-buy {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    /* Màu mặc định */
+    background-color: #007bff; 
+    color: white;              
+    
+    transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+    
+    background-color: #ff4757; 
+    color: #fff;               
+    transform: scale(1.05);
+}
+
+/* YÊU CẦU 4: Loading spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 50%;
+    
+    
+    border: 5px solid #e0e0e0; 
+    border-top: 5px solid #007bff; 
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
