@@ -1,6 +1,6 @@
 # PHIẾU BÀI TẬP 02
 ## PHẦN A 
-### Câu A1—Input Types
+### Câu A1—Input Types  
 
 Liệt kê **10 input types** khác nhau trong HTML5, cho mỗi type:
 - Giao diện hiển thị (mô tả bằng lời)
