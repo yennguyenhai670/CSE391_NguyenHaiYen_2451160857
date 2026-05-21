@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* CSS hỗ trợ nhỏ để chừa chỗ cho sidebar cố định */
+        .sidebar { width: 250px; z-index: 1000; }
+        .main-content { margin-left: 250px; min-height: 100vh; }
+        
+        /* Ẩn sidebar trên mobile cho gọn (tùy chọn) */
+        @media (max-width: 768px) {
+            .sidebar { display: none !important; }
+            .main-content { margin-left: 0; }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- 1. Sidebar cố định -->
+    <div class="sidebar position-fixed top-0 start-0 h-100 bg-dark text-white p-3">
+        <h4 class="text-center py-2 border-bottom border-secondary mb-4">Admin Panel</h4>
+        <div class="list-group list-group-flush" data-bs-theme="dark">
+            <a href="#" class="list-group-item list-group-item-action active">📊 Tổng quan</a>
+            <a href="#" class="list-group-item list-group-item-action">🛒 Đơn hàng</a>
+            <a href="#" class="list-group-item list-group-item-action">📦 Sản phẩm</a>
+            <a href="#" class="list-group-item list-group-item-action">👥 Khách hàng</a>
+            <a href="#" class="list-group-item list-group-item-action">⚙️ Cài đặt</a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content p-4">
+        
+        <!-- 2. Topbar: Breadcrumb & User Dropdown -->
+        <div class="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded shadow-sm">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tổng quan</li>
+                </ol>
+            </nav>
+            
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                     Admin
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Hồ sơ</a></li>
+                    <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item text-danger" href="#">Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5. Toast/Alert Thông báo -->
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+            <strong>Thành công!</strong> Bạn đã cập nhật hệ thống lên phiên bản mới nhất.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- 3. Content Row 1: 4 Stat Cards -->
+        <div class="row g-3 mb-4">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-white bg-primary h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="card-title">Doanh thu tháng</h6>
+                        <h3 class="card-text">45,000,000 đ</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-white bg-success h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="card-title">Đơn hàng mới</h6>
+                        <h3 class="card-text">128 Đơn</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-dark bg-warning h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="card-title">Khách hàng mới</h6>
+                        <h3 class="card-text">64 Người</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card text-white bg-danger h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="card-title">Yêu cầu hoàn trả</h6>
+                        <h3 class="card-text">3 Yêu cầu</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Row 3: Form tìm kiếm + filter (Đưa lên trên Table cho hợp logic UX) -->
+        <div class="card mb-4 shadow-sm border-0">
+            <div class="card-body">
+                <form class="row g-2">
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white">🔍</span>
+                            <input type="text" class="form-control" placeholder="Nhập mã đơn hàng hoặc tên khách hàng...">
+                            <button class="btn btn-primary" type="button">Tìm kiếm</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select">
+                            <option selected>Lọc theo trạng thái...</option>
+                            <option value="1">Đang xử lý</option>
+                            <option value="2">Đã giao</option>
+                            <option value="3">Đã hủy</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Content Row 2: Table dữ liệu -->
+        <div class="card mb-4 shadow-sm border-0">
+            <div class="card-header bg-white py-3">
+                <h5 class="mb-0 fw-bold">Danh sách đơn hàng gần đây</h5>
+            </div>
+            <div class="card-body p-0 table-responsive">
+                <table class="table table-striped table-hover mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Mã ĐH</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#DH1001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>21/05/2026</td>
+                            <td>1,200,000 đ</td>
+                            <td><span class="badge bg-warning text-dark">Đang xử lý</span></td>
+                        </tr>
+                        <tr>
+                            <td>#DH1002</td>
+                            <td>Trần Thị B</td>
+                            <td>20/05/2026</td>
+                            <td>550,000 đ</td>
+                            <td><span class="badge bg-success">Đã giao</span></td>
+                        </tr>
+                        <tr>
+                            <td>#DH1003</td>
+                            <td>Lê Văn C</td>
+                            <td>19/05/2026</td>
+                            <td>2,490,000 đ</td>
+                            <td><span class="badge bg-danger">Đã hủy</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4. Accordion: FAQ Section -->
+        <div class="card shadow-sm border-0 mb-5">
+            <div class="card-header bg-white py-3">
+                <h5 class="mb-0 fw-bold">Câu hỏi thường gặp (FAQ)</h5>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="faqAccordion">
+                    <!-- Câu 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                Làm thế nào để thêm sản phẩm mới?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Bạn cần truy cập vào menu <strong>Sản phẩm</strong> ở sidebar bên trái, sau đó bấm nút "Thêm mới" ở góc phải màn hình và điền đầy đủ thông tin.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Câu 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                Hủy đơn hàng của khách như thế nào?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Chọn đơn hàng cần hủy trong bảng danh sách đơn hàng, nhấn vào icon thùng rác hoặc nút "Hủy đơn" và nhập lý do.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
