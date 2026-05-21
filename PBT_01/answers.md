@@ -3,7 +3,7 @@
 ### Câu A1 — HTTP & Browser
 **Nguồn tham chiếu:** `01_introduction_html_universe.md` - Mục `1.1. Kiến trúc Client-Server` và `1.3. Browser Rendering`.
 
-1. Khi gõ `https://shopee.vn`:
+1. Khi gõ `https://shopee.vn`:  
 - **DNS Lookup:** Trình duyệt tìm kiếm địa chỉ IP tương ứng với tên miền `shopee.vn`.
 - **Establish Connection (TCP/TLS Handshake):** Thiết lập kết nối an toàn giữa máy tính của bạn và máy chủ Shopee.
 - **HTTP Request:** Trình duyệt gửi yêu cầu (thường là phương thức GET) để lấy dữ liệu trang web.
