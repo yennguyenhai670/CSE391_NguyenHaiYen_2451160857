@@ -6,7 +6,7 @@ Viết CSS thẳng vào thuộc tính `style` của thẻ HTML.
 - **vd Code:** `<h1 style="color: red;">Text</h1>`
 - **Ưu điểm:** Nhanh, độ ưu tiên cao nhất.
 - **Nhược điểm:** Code rối, không tái sử dụng được, khó bảo trì.
-- **Dùng khi:** Test code nhanh, code Email HTML, hoặc dùng JavaScript can thiệp style động.
+- **Dùng khi:** Test code nhanh, code Email HTML, hoặc dùng JavaScript can thiệp style động. 
 
 ### 2. Internal CSS (Nhúng trong file HTML)
 Viết CSS vào thẻ `<style>`, thường đặt trong thẻ `<head>`.
