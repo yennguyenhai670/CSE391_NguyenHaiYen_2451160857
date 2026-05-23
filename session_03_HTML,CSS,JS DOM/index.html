@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sinh viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản lý Sinh viên</h1>
+        
+        <div class="top-bar">
+            <button id="btnOpenModal" class="btn btn-primary">Thêm Sinh Viên</button>
+            <div class="statistics">
+                <span>Tổng số SV: <strong id="totalStudents">0</strong></span>
+                <span>Điểm TB lớp: <strong id="averageScore">0.0</strong></span>
+            </div>
+        </div>
+
+        <div id="notification" class="notification hidden"></div>
+
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Mã SV</th>
+                    <th>Họ và Tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Lớp</th>
+                    <th>Điểm TB</th>
+                    <th>Email</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="studentBody">
+                </tbody>
+        </table>
+    </div>
+
+    <div id="studentModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">Thêm mới Sinh viên</h2>
+            <form id="studentForm">
+                <input type="hidden" id="editIndex" value="-1">
+                
+                <div class="form-group">
+                    <label for="studentId">Mã sinh viên:</label>
+                    <input type="text" id="studentId" placeholder="VD: SV001">
+                    <span class="error-message" id="error-studentId"></span> 
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Họ và tên:</label>
+                    <input type="text" id="fullName">
+                    <span class="error-message" id="error-fullName"></span>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Ngày sinh:</label>
+                    <input type="date" id="dob">
+                    <span class="error-message" id="error-dob"></span>
+                </div>
+                <div class="form-group">
+                    <label for="className">Lớp học:</label>
+                    <input type="text" id="className">
+                    <span class="error-message" id="error-className"></span>
+                </div>
+                <div class="form-group">
+                    <label for="score">Điểm trung bình (0-10):</label>
+                    <input type="number" id="score" step="0.1" min="0" max="10">
+                    <span class="error-message" id="error-score"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email">
+                    <span class="error-message" id="error-email"></span>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" id="btnCancel" class="btn btn-secondary">Hủy</button>
+                    <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
