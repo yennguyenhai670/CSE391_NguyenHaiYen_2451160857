@@ -3,6 +3,7 @@
 ## PHẦN A — KIỂM TRA ĐỌC HIỂU
 ### Câu A1 — DOM Tree
 1. Vẽ DOM tree (sơ đồ cây) cho HTML trên
+```
 div#app
  ├── header
  │    ├── h1 
@@ -24,6 +25,7 @@ div#app
            │    └── "Learn HTML" (Text Node)
            └── li.todo-item.completed 
                 └── "Learn CSS" (Text Node)
+```
 2. Viết **querySelector** cho mỗi yêu cầu:
 - Chọn thẻ <h1>: document.querySelector('h1') (hoặc document.querySelector('header h1'))
 - Chọn input trong form: document.querySelector('#todoInput') (hoặc document.querySelector('#todoForm input'))
