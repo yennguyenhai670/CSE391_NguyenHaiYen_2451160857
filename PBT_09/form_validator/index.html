@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Đăng Ký Tài Khoản</h2>
+        <form id="registerForm">
+            
+            <div class="form-group">
+                <label>Họ và Tên</label>
+                <div class="input-wrapper">
+                    <input type="text" id="name" placeholder="Nhập tên của bạn">
+                    <span class="icon" id="nameIcon"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" id="email" placeholder="example@domain.com">
+                <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Mật khẩu</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu">
+                <div class="strength-meter">
+                    <div id="strengthBar" class="bar"></div>
+                </div>
+                <small id="strengthText"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Xác nhận mật khẩu</label>
+                <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                <small class="error" id="confirmError"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="text" id="phone" placeholder="0901-234-567">
+                <small class="error" id="phoneError"></small>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>Đăng ký ngay</button>
+        </form>
+    </div>
+
+    <div id="successModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="check-icon">✅</div>
+            <h3>Đăng ký thành công!</h3>
+            <div id="modalData"></div>
+            <button id="closeModalBtn">Đóng</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

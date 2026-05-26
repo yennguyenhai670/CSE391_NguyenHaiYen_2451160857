@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard App & Accessibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bàn Phím & Trợ Năng</h1>
+        <p>Hướng dẫn: 
+            <kbd>Tab</kbd> để di chuyển focus | 
+            <kbd>Ctrl</kbd> + <kbd>K</kbd> mở Command Palette
+        </p>
+    </header>
+
+    <main>
+        <section aria-label="Bộ sưu tập ảnh">
+            <p class="hint">Click hoặc nhấn Enter vào ảnh để xem chi tiết.</p>
+            <div id="gallery" class="gallery-grid">
+                </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal-overlay hidden" aria-modal="true" role="dialog" aria-label="Trình xem ảnh">
+        <div class="modal-content">
+            <button id="closeModalBtn" aria-label="Đóng trình xem ảnh (Phím Escape)">✖</button>
+            <div class="image-viewer">
+                <button id="prevBtn" aria-label="Ảnh trước (Mũi tên trái)">&#8592;</button>
+                <img id="fullImage" src="" alt="Ảnh phóng to" aria-live="polite">
+                <button id="nextBtn" aria-label="Ảnh tiếp theo (Mũi tên phải)">&#8594;</button>
+            </div>
+            <p id="slideshowStatus" aria-live="polite">Trạng thái: Đang dừng (Phím Space để Play/Pause)</p>
+            <p class="modal-hint">Phím tắt: <kbd>←</kbd> <kbd>→</kbd> chuyển ảnh | <kbd>1</kbd>-<kbd>9</kbd> chọn ảnh | <kbd>Space</kbd> Slideshow | <kbd>Esc</kbd> Đóng</p>
+        </div>
+    </div>
+
+    <div id="cmdPalette" class="cmd-overlay hidden" aria-modal="true" role="dialog" aria-label="Bảng lệnh">
+        <div class="cmd-box">
+            <input type="text" id="cmdInput" placeholder="Gõ lệnh... (vd: dark, alert)" aria-autocomplete="list" aria-controls="cmdList">
+            <ul id="cmdList" role="listbox" aria-label="Danh sách lệnh">
+                </ul>
+            <p class="cmd-hint"><kbd>↓</kbd> <kbd>↑</kbd> để chọn | <kbd>Enter</kbd> thực thi | <kbd>Esc</kbd> Đóng</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
